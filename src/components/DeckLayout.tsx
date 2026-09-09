@@ -12,14 +12,14 @@ export const DECK_PAGES = [
   { to: "/ecommerce", label: "E-Commerce" },
   { to: "/autocad", label: "AutoCAD & 3D" },
   { to: "/video-vfx", label: "Video & VFX" },
-] as const;
+];
 
 const TOTAL = DECK_PAGES.length;
 const pad = (n: number) => String(n).padStart(2, "0");
 
 export function DeckLayout({ slide, children }: { slide: number; children: ReactNode }) {
-  const prev = DECK_PAGES[(slide - 2 + TOTAL) % TOTAL];
-  const next = DECK_PAGES[slide % TOTAL];
+  const prev = DECK_PAGES[(slide - 2 + TOTAL) % TOTAL]!;
+  const next = DECK_PAGES[slide % TOTAL]!;
 
   return (
     <>
