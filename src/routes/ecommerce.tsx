@@ -202,15 +202,15 @@ function Page() {
       <div className="w-full h-44 relative flex items-end">
       <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 500 180">
       <defs>
-      <lineargradient id="mintGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+      <linearGradient id="mintGrad" x1="0%" x2="0%" y1="0%" y2="100%">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.35" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
-      </lineargradient>
-      <lineargradient id="strokeMint" x1="0%" x2="100%" y1="0%" y2="0%">
+      </linearGradient>
+      <linearGradient id="strokeMint" x1="0%" x2="100%" y1="0%" y2="0%">
       <stop offset="0%" stopColor="#00e29e" />
       <stop offset="50%" stopColor="#00f2aa" />
       <stop offset="100%" stopColor="#c1ffdd" />
-      </lineargradient>
+      </linearGradient>
       </defs>
       {/* Grid Horizontal Reference Lines */}
       <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="500" y1="30" y2="30" />

@@ -247,10 +247,10 @@ function Page() {
       <div className="h-16 w-full py-1">
       <svg className="w-full h-full" fill="none" viewBox="0 0 160 50">
       <path d="M 0,38 Q 20,42 40,25 T 80,18 T 120,30 T 160,8" fill="none" stroke="#00f2aa" strokeWidth="2" />
-      <lineargradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
+      <linearGradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.3" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0" />
-      </lineargradient>
+      </linearGradient>
       <path d="M 0,38 Q 20,42 40,25 T 80,18 T 120,30 T 160,8 L 160,50 L 0,50 Z" fill="url(#chartGrad)" />
       </svg>
       </div>

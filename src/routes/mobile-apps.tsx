@@ -185,10 +185,10 @@ function Page() {
       </div>
       <svg className="w-full h-14" preserveAspectRatio="none" viewBox="0 0 400 60">
       <defs>
-      <lineargradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
+      <linearGradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.35" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
-      </lineargradient>
+      </linearGradient>
       </defs>
       <path d="M0,45 Q40,15 80,35 T160,20 T240,38 T320,10 T400,22 L400,60 L0,60 Z" fill="url(#areaGrad)" />
       <path d="M0,45 Q40,15 80,35 T160,20 T240,38 T320,10 T400,22" fill="none" stroke="#00f2aa" strokeWidth="2.5" />
@@ -531,10 +531,10 @@ function Page() {
       </div>
       <svg className="w-full h-12 mt-1" preserveAspectRatio="none" viewBox="0 0 400 50">
       <defs>
-      <lineargradient id="caseStudyGrad" x1="0" x2="0" y1="0" y2="1">
+      <linearGradient id="caseStudyGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.3" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
-      </lineargradient>
+      </linearGradient>
       </defs>
       <path d="M0,35 Q45,10 90,30 T180,15 T270,32 T360,8 T400,20 L400,50 L0,50 Z" fill="url(#caseStudyGrad)" />
       <path d="M0,35 Q45,10 90,30 T180,15 T270,32 T360,8 T400,20" fill="none" stroke="#00f2aa" strokeWidth="2.5" />

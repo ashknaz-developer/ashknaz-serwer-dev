@@ -188,14 +188,14 @@ function Page() {
       <div className="w-full h-44 relative">
       <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 540 160">
       <defs>
-      <lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
+      <linearGradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00F2AA" stopOpacity="0.32" />
       <stop offset="90%" stopColor="#00F2AA" stopOpacity="0.0" />
-      </lineargradient>
-      <lineargradient id="secondaryLineGrad" x1="0" x2="1" y1="0" y2="0">
+      </linearGradient>
+      <linearGradient id="secondaryLineGrad" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0%" stopColor="#7BD0FF" />
       <stop offset="100%" stopColor="#00F2AA" />
-      </lineargradient>
+      </linearGradient>
       </defs>
       {/* Horizontal Guideline Tracks */}
       <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="540" y1="20" y2="20" />

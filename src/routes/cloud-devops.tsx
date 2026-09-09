@@ -187,10 +187,10 @@ function Page() {
       <div className="w-full h-24 relative overflow-hidden rounded-lg bg-surface-container-lowest p-2 flex flex-col justify-end">
       <svg className="w-full h-16" preserveAspectRatio="none" viewBox="0 0 500 100">
       <defs>
-      <lineargradient id="mintGrad" x1="0" x2="0" y1="0" y2="1">
+      <linearGradient id="mintGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.35" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
-      </lineargradient>
+      </linearGradient>
       </defs>
       <path d="M0 75 Q 35 30, 70 50 T 140 35 T 210 60 T 280 20 T 350 45 T 420 25 T 500 30 L 500 100 L 0 100 Z" fill="url(#mintGrad)" />
       <path d="M0 75 Q 35 30, 70 50 T 140 35 T 210 60 T 280 20 T 350 45 T 420 25 T 500 30" fill="none" stroke="#00f2aa" strokeWidth="2.5" />
