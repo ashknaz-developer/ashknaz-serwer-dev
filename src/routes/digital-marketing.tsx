@@ -188,20 +188,20 @@ function Page() {
       <div className="w-full h-44 relative">
       <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 540 160">
       <defs>
-      <lineargradient id="primaryAreaGrad" x={true}1="0" x={true}2="0" y={true}1="0" y={true}2="1">
+      <lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00F2AA" stopOpacity="0.32" />
       <stop offset="90%" stopColor="#00F2AA" stopOpacity="0.0" />
       </lineargradient>
-      <lineargradient id="secondaryLineGrad" x={true}1="0" x={true}2="1" y={true}1="0" y={true}2="0">
+      <lineargradient id="secondaryLineGrad" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0%" stopColor="#7BD0FF" />
       <stop offset="100%" stopColor="#00F2AA" />
       </lineargradient>
       </defs>
       {/* Horizontal Guideline Tracks */}
-      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="540" y={true}1="20" y={true}2="20" />
-      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="540" y={true}1="65" y={true}2="65" />
-      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="540" y={true}1="110" y={true}2="110" />
-      <line stroke="#2F3541" strokeWidth="1" x={true}1="0" x={true}2="540" y={true}1="150" y={true}2="150" />
+      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="540" y1="20" y2="20" />
+      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="540" y1="65" y2="65" />
+      <line stroke="#2F3541" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="540" y1="110" y2="110" />
+      <line stroke="#2F3541" strokeWidth="1" x1="0" x2="540" y1="150" y2="150" />
       {/* Lower Secondary Line (Cost Basis) */}
       <path d="M0,135 Q90,130 180,122 T360,95 T540,78" fill="none" stroke="#7BD0FF" strokeOpacity="0.5" strokeWidth="2" />
       {/* Revenue Filled Area & Upper Spline Curve */}

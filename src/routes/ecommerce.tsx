@@ -202,20 +202,20 @@ function Page() {
       <div className="w-full h-44 relative flex items-end">
       <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 500 180">
       <defs>
-      <lineargradient id="mintGrad" x={true}1="0%" x={true}2="0%" y={true}1="0%" y={true}2="100%">
+      <lineargradient id="mintGrad" x1="0%" x2="0%" y1="0%" y2="100%">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.35" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
       </lineargradient>
-      <lineargradient id="strokeMint" x={true}1="0%" x={true}2="100%" y={true}1="0%" y={true}2="0%">
+      <lineargradient id="strokeMint" x1="0%" x2="100%" y1="0%" y2="0%">
       <stop offset="0%" stopColor="#00e29e" />
       <stop offset="50%" stopColor="#00f2aa" />
       <stop offset="100%" stopColor="#c1ffdd" />
       </lineargradient>
       </defs>
       {/* Grid Horizontal Reference Lines */}
-      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="500" y={true}1="30" y={true}2="30" />
-      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="500" y={true}1="80" y={true}2="80" />
-      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x={true}1="0" x={true}2="500" y={true}1="130" y={true}2="130" />
+      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="500" y1="30" y2="30" />
+      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="500" y1="80" y2="80" />
+      <line stroke="#242a36" strokeDasharray="3 3" strokeWidth="1" x1="0" x2="500" y1="130" y2="130" />
       {/* Prior Benchmark Curve */}
       <path d="M0,140 Q60,135 120,110 T240,95 T360,75 T500,60" fill="none" stroke="#3b4a41" strokeDasharray="4 4" strokeWidth="2" />
       {/* Main Neon Mint Trajectory Curve */}

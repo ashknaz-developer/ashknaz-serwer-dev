@@ -344,7 +344,7 @@ function Page() {
       <div className="h-16 w-full relative flex items-end">
       <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 300 60">
       <defs>
-      <lineargradient id="chartGrad" x={true}1="0" x={true}2="0" y={true}1="0" y={true}2="1">
+      <lineargradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.3" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
       </lineargradient>

@@ -158,20 +158,20 @@ function Page() {
       <path className="text-primary" d="M180 140 H60 V220" stroke="currentColor" strokeWidth="3" />
       <path className="text-primary" d="M340 140 H440 V220" stroke="currentColor" strokeWidth="3" />
       {/* Secondary Partitions & Office Cells */}
-      <line className="text-secondary" stroke="currentColor" strokeWidth="1.5" x={true}1="180" x={true}2="340" y={true}1="80" y={true}2="80" />
-      <line className="text-secondary" stroke="currentColor" strokeWidth="1.5" x={true}1="260" x={true}2="260" y={true}1="20" y={true}2="80" />
+      <line className="text-secondary" stroke="currentColor" strokeWidth="1.5" x1="180" x2="340" y1="80" y2="80" />
+      <line className="text-secondary" stroke="currentColor" strokeWidth="1.5" x1="260" x2="260" y1="20" y2="80" />
       {/* HVAC Duct Flow Paths */}
       <path className="text-tertiary-fixed-dim" d="M40 50 Q260 30 460 50" stroke="currentColor" strokeDasharray="6 3" strokeWidth="1" />
       <path className="text-tertiary-fixed-dim" d="M40 180 Q260 210 460 180" stroke="currentColor" strokeDasharray="6 3" strokeWidth="1" />
       {/* Dimension Annotations & Ticks */}
-      <line className="text-outline" stroke="currentColor" strokeWidth="1" x={true}1="20" x={true}2="480" y={true}1="10" y={true}2="10" />
-      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x={true}1="20" x={true}2="20" y={true}1="6" y={true}2="14" />
-      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x={true}1="480" x={true}2="480" y={true}1="6" y={true}2="14" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1" x1="20" x2="480" y1="10" y2="10" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x1="20" x2="20" y1="6" y2="14" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x1="480" x2="480" y1="6" y2="14" />
       <text className="text-primary font-label-badge text-[10px]" fill="currentColor" textAnchor="middle" x="250" y="9">SPAN: 24,500 mm</text>
       {/* Left Dimension */}
-      <line className="text-outline" stroke="currentColor" strokeWidth="1" x={true}1="10" x={true}2="10" y={true}1="20" y={true}2="220" />
-      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x={true}1="6" x={true}2="14" y={true}1="20" y={true}2="20" />
-      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x={true}1="6" x={true}2="14" y={true}1="220" y={true}2="220" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1" x1="10" x2="10" y1="20" y2="220" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x1="6" x2="14" y1="20" y2="20" />
+      <line className="text-outline" stroke="currentColor" strokeWidth="1.5" x1="6" x2="14" y1="220" y2="220" />
       <text className="text-primary font-label-badge text-[10px]" fill="currentColor" textAnchor="middle" transform="rotate(-90 8 125)" x="8" y="125">DEPTH: 10,800 mm</text>
       {/* Workstation Pod Markers */}
       <rect className="text-surface-bright" fill="currentColor" height="20" rx="2" width="30" x="80" y="45" />
@@ -185,8 +185,8 @@ function Page() {
       <circle className="text-primary-container" cx="260" cy="110" fill="currentColor" r="4" />
       {/* Live Target Crosshairs */}
       <circle className="text-error animate-pulse" cx="340" cy="140" r="9" stroke="currentColor" strokeWidth="1" />
-      <line className="text-error" stroke="currentColor" strokeWidth="1" x={true}1="340" x={true}2="340" y={true}1="126" y={true}2="154" />
-      <line className="text-error" stroke="currentColor" strokeWidth="1" x={true}1="326" x={true}2="354" y={true}1="140" y={true}2="140" />
+      <line className="text-error" stroke="currentColor" strokeWidth="1" x1="340" x2="340" y1="126" y2="154" />
+      <line className="text-error" stroke="currentColor" strokeWidth="1" x1="326" x2="354" y1="140" y2="140" />
       </svg>
       {/* Floating Isometric Picture-in-Picture 3D Preview */}
       <div className="absolute bottom-2 right-2 w-48 h-32 rounded-xl bg-surface-container-high/90 backdrop-blur-md p-2 shadow-2xl overflow-hidden flex flex-col justify-between">

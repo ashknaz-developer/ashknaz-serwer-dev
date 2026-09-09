@@ -185,7 +185,7 @@ function Page() {
       </div>
       <svg className="w-full h-14" preserveAspectRatio="none" viewBox="0 0 400 60">
       <defs>
-      <lineargradient id="areaGrad" x={true}1="0" x={true}2="0" y={true}1="0" y={true}2="1">
+      <lineargradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.35" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
       </lineargradient>
@@ -531,7 +531,7 @@ function Page() {
       </div>
       <svg className="w-full h-12 mt-1" preserveAspectRatio="none" viewBox="0 0 400 50">
       <defs>
-      <lineargradient id="caseStudyGrad" x={true}1="0" x={true}2="0" y={true}1="0" y={true}2="1">
+      <lineargradient id="caseStudyGrad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stopColor="#00f2aa" stopOpacity="0.3" />
       <stop offset="100%" stopColor="#00f2aa" stopOpacity="0.0" />
       </lineargradient>
