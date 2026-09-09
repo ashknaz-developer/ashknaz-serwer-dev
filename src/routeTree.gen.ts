@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Ai3dInteractiveRouteImport } from './routes/ai-3d-interactive'
+import { Route as AutocadRouteImport } from './routes/autocad'
+import { Route as CloudDevopsRouteImport } from './routes/cloud-devops'
+import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
+import { Route as EcommerceRouteImport } from './routes/ecommerce'
+import { Route as FullStackWebRouteImport } from './routes/full-stack-web'
+import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
+import { Route as UiuxCreativeRouteImport } from './routes/uiux-creative'
+import { Route as VideoVfxRouteImport } from './routes/video-vfx'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Ai3dInteractiveRoute = Ai3dInteractiveRouteImport.update({
+  id: '/ai-3d-interactive',
+  path: '/ai-3d-interactive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutocadRoute = AutocadRouteImport.update({
+  id: '/autocad',
+  path: '/autocad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CloudDevopsRoute = CloudDevopsRouteImport.update({
+  id: '/cloud-devops',
+  path: '/cloud-devops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalMarketingRoute = DigitalMarketingRouteImport.update({
+  id: '/digital-marketing',
+  path: '/digital-marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcommerceRoute = EcommerceRouteImport.update({
+  id: '/ecommerce',
+  path: '/ecommerce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FullStackWebRoute = FullStackWebRouteImport.update({
+  id: '/full-stack-web',
+  path: '/full-stack-web',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MobileAppsRoute = MobileAppsRouteImport.update({
+  id: '/mobile-apps',
+  path: '/mobile-apps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UiuxCreativeRoute = UiuxCreativeRouteImport.update({
+  id: '/uiux-creative',
+  path: '/uiux-creative',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoVfxRoute = VideoVfxRouteImport.update({
+  id: '/video-vfx',
+  path: '/video-vfx',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-3d-interactive': typeof Ai3dInteractiveRoute
+  '/autocad': typeof AutocadRoute
+  '/cloud-devops': typeof CloudDevopsRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/ecommerce': typeof EcommerceRoute
+  '/full-stack-web': typeof FullStackWebRoute
+  '/mobile-apps': typeof MobileAppsRoute
+  '/uiux-creative': typeof UiuxCreativeRoute
+  '/video-vfx': typeof VideoVfxRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-3d-interactive': typeof Ai3dInteractiveRoute
+  '/autocad': typeof AutocadRoute
+  '/cloud-devops': typeof CloudDevopsRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/ecommerce': typeof EcommerceRoute
+  '/full-stack-web': typeof FullStackWebRoute
+  '/mobile-apps': typeof MobileAppsRoute
+  '/uiux-creative': typeof UiuxCreativeRoute
+  '/video-vfx': typeof VideoVfxRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-3d-interactive': typeof Ai3dInteractiveRoute
+  '/autocad': typeof AutocadRoute
+  '/cloud-devops': typeof CloudDevopsRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/ecommerce': typeof EcommerceRoute
+  '/full-stack-web': typeof FullStackWebRoute
+  '/mobile-apps': typeof MobileAppsRoute
+  '/uiux-creative': typeof UiuxCreativeRoute
+  '/video-vfx': typeof VideoVfxRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-3d-interactive'
+    | '/autocad'
+    | '/cloud-devops'
+    | '/digital-marketing'
+    | '/ecommerce'
+    | '/full-stack-web'
+    | '/mobile-apps'
+    | '/uiux-creative'
+    | '/video-vfx'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-3d-interactive'
+    | '/autocad'
+    | '/cloud-devops'
+    | '/digital-marketing'
+    | '/ecommerce'
+    | '/full-stack-web'
+    | '/mobile-apps'
+    | '/uiux-creative'
+    | '/video-vfx'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-3d-interactive'
+    | '/autocad'
+    | '/cloud-devops'
+    | '/digital-marketing'
+    | '/ecommerce'
+    | '/full-stack-web'
+    | '/mobile-apps'
+    | '/uiux-creative'
+    | '/video-vfx'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Ai3dInteractiveRoute: typeof Ai3dInteractiveRoute
+  AutocadRoute: typeof AutocadRoute
+  CloudDevopsRoute: typeof CloudDevopsRoute
+  DigitalMarketingRoute: typeof DigitalMarketingRoute
+  EcommerceRoute: typeof EcommerceRoute
+  FullStackWebRoute: typeof FullStackWebRoute
+  MobileAppsRoute: typeof MobileAppsRoute
+  UiuxCreativeRoute: typeof UiuxCreativeRoute
+  VideoVfxRoute: typeof VideoVfxRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-3d-interactive': {
+      id: '/ai-3d-interactive'
+      path: '/ai-3d-interactive'
+      fullPath: '/ai-3d-interactive'
+      preLoaderRoute: typeof Ai3dInteractiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autocad': {
+      id: '/autocad'
+      path: '/autocad'
+      fullPath: '/autocad'
+      preLoaderRoute: typeof AutocadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cloud-devops': {
+      id: '/cloud-devops'
+      path: '/cloud-devops'
+      fullPath: '/cloud-devops'
+      preLoaderRoute: typeof CloudDevopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-marketing': {
+      id: '/digital-marketing'
+      path: '/digital-marketing'
+      fullPath: '/digital-marketing'
+      preLoaderRoute: typeof DigitalMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecommerce': {
+      id: '/ecommerce'
+      path: '/ecommerce'
+      fullPath: '/ecommerce'
+      preLoaderRoute: typeof EcommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/full-stack-web': {
+      id: '/full-stack-web'
+      path: '/full-stack-web'
+      fullPath: '/full-stack-web'
+      preLoaderRoute: typeof FullStackWebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobile-apps': {
+      id: '/mobile-apps'
+      path: '/mobile-apps'
+      fullPath: '/mobile-apps'
+      preLoaderRoute: typeof MobileAppsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uiux-creative': {
+      id: '/uiux-creative'
+      path: '/uiux-creative'
+      fullPath: '/uiux-creative'
+      preLoaderRoute: typeof UiuxCreativeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-vfx': {
+      id: '/video-vfx'
+      path: '/video-vfx'
+      fullPath: '/video-vfx'
+      preLoaderRoute: typeof VideoVfxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Ai3dInteractiveRoute: Ai3dInteractiveRoute,
+  AutocadRoute: AutocadRoute,
+  CloudDevopsRoute: CloudDevopsRoute,
+  DigitalMarketingRoute: DigitalMarketingRoute,
+  EcommerceRoute: EcommerceRoute,
+  FullStackWebRoute: FullStackWebRoute,
+  MobileAppsRoute: MobileAppsRoute,
+  UiuxCreativeRoute: UiuxCreativeRoute,
+  VideoVfxRoute: VideoVfxRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
