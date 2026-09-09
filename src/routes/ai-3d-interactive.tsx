@@ -434,20 +434,7 @@ function Page() {
       </div>
       </div>
       </div>
-      <script>
-        // Slide 04 Micro-interaction: Dynamic latency pulse & sparkline update preview
-        document.addEventListener('DOMContentLoaded', () => {
-          const latencyValues = ['<14.8', '<16.4', '<15.2', '<17.0', '<15.9'];
-          let idx = 0;
-          const latencyEl = document.querySelector('.text-primary-container');
-          if (latencyEl) {
-            setInterval(() => {
-              idx = (idx + 1) % latencyValues.length;
-              latencyEl.textContent = latencyValues[idx];
-            }, 2800);
-          }
-        });
-      </script>
+
     </DeckLayout>
   );
 }

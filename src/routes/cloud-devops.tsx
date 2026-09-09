@@ -540,22 +540,7 @@ function Page() {
       </div>
       </section>
       {/* Interactive Terminal Feed Micro-Script */}
-      <script>
-          (function() {
-            // Periodic subtle HUD indicator ping
-            const nodes = document.querySelectorAll('[title^="Node"]');
-            if (nodes.length > 0) {
-              setInterval(() => {
-                const randomIndex = Math.floor(Math.random() * nodes.length);
-                const target = nodes[randomIndex];
-                target.classList.add('bg-primary-container/40');
-                setTimeout(() => {
-                  target.classList.remove('bg-primary-container/40');
-                }, 600);
-              }, 1200);
-            }
-          })();
-        </script>
+
       </div>
     </DeckLayout>
   );
