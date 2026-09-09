@@ -40,7 +40,7 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
               </div>
             </Link>
           </div>
-          <nav className="hidden xl:flex items-center gap-gutter-xs p-1 rounded-full bg-surface-container-low">
+          <nav className="hidden xl:flex items-center gap-0.5 p-1 rounded-full bg-surface-container-low overflow-x-auto max-w-[54vw]">
             {DECK_PAGES.map((p, i) => {
               const active = i === slide - 1;
               return (
@@ -50,8 +50,8 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
                   aria-current={active ? "page" : undefined}
                   className={
                     active
-                      ? "px-3 py-2 rounded-full transition-colors bg-surface-container-high text-primary font-semibold font-label-md text-label-md"
-                      : "px-3 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+                      ? "px-2.5 py-2 rounded-full whitespace-nowrap transition-colors bg-surface-container-high text-primary font-semibold font-label-md text-label-md"
+                      : "px-2.5 py-2 rounded-full whitespace-nowrap font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
                   }
                 >
                   {p.label}
