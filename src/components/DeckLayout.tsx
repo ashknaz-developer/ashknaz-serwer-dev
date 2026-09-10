@@ -1,5 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { Laptop, Menu, Moon, Sun } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 export const DECK_PAGES = [
   { to: "/", label: "Overview" },
@@ -16,10 +29,55 @@ export const DECK_PAGES = [
 
 const TOTAL = DECK_PAGES.length;
 const pad = (n: number) => String(n).padStart(2, "0");
+type ThemePreference = "dark" | "light" | "system";
+
+const THEME_OPTIONS: Array<{
+  value: ThemePreference;
+  label: string;
+  icon: typeof Moon;
+}> = [
+  { value: "dark", label: "Dark", icon: Moon },
+  { value: "light", label: "Light", icon: Sun },
+  { value: "system", label: "System", icon: Laptop },
+];
 
 export function DeckLayout({ slide, children }: { slide: number; children: ReactNode }) {
   const prev = DECK_PAGES[(slide - 2 + TOTAL) % TOTAL]!;
   const next = DECK_PAGES[slide % TOTAL]!;
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [theme, setTheme] = useState<ThemePreference>("dark");
+  const activeLinkRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    if (savedTheme === "dark" || savedTheme === "light" || savedTheme === "system") {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const applyTheme = () => {
+      const resolvedTheme = theme === "system" ? (media.matches ? "dark" : "light") : theme;
+      document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.style.colorScheme = resolvedTheme;
+    };
+
+    applyTheme();
+    window.localStorage.setItem("portfolio-theme", theme);
+    media.addEventListener("change", applyTheme);
+    return () => media.removeEventListener("change", applyTheme);
+  }, [theme]);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    activeLinkRef.current?.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [slide]);
 
   return (
     <>
@@ -40,12 +98,16 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
               </div>
             </Link>
           </div>
-          <nav className="hidden xl:flex items-center gap-0.5 p-1 rounded-full bg-surface-container-low overflow-x-auto max-w-[54vw]">
+          <nav
+            aria-label="Portfolio sections"
+            className="deck-nav hidden xl:flex items-center gap-0.5 p-1 rounded-full bg-surface-container-low overflow-x-auto max-w-[54vw]"
+          >
             {DECK_PAGES.map((p, i) => {
               const active = i === slide - 1;
               return (
                 <Link
                   key={p.to}
+                  ref={active ? activeLinkRef : undefined}
                   to={p.to}
                   aria-current={active ? "page" : undefined}
                   className={
@@ -66,9 +128,94 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
             >
               Schedule Strategy Call
             </a>
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+            <div className="hidden xl:flex w-8 h-8 rounded-full bg-primary items-center justify-center">
               <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
             </div>
+            <Sheet open={drawerOpen} onOpenChange={setDrawerOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                  className="xl:hidden rounded-full text-on-surface hover:bg-surface-container-high hover:text-primary"
+                >
+                  <Menu aria-hidden="true" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="w-[min(88vw,22rem)] border-outline-variant bg-surface-container-lowest p-0 text-on-surface">
+                <SheetHeader className="border-b border-outline-variant px-6 pb-5 pt-7 text-left">
+                  <SheetTitle className="font-headline-sm text-headline-sm text-on-surface">
+                    Ashknaz Serwer
+                  </SheetTitle>
+                  <SheetDescription className="font-label-badge text-label-badge uppercase tracking-[0.08em] text-primary-fixed-dim">
+                    Digital Engineering
+                  </SheetDescription>
+                </SheetHeader>
+
+                <nav aria-label="Mobile portfolio sections" className="flex flex-col gap-1 px-4 py-5">
+                  {DECK_PAGES.map((page, index) => {
+                    const active = index === slide - 1;
+                    return (
+                      <SheetClose asChild key={page.to}>
+                        <Link
+                          to={page.to}
+                          aria-current={active ? "page" : undefined}
+                          onClick={() => setDrawerOpen(false)}
+                          className={cn(
+                            "flex min-h-11 items-center justify-between rounded-lg px-4 font-label-lg text-label-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                            active
+                              ? "bg-surface-container-high text-primary font-bold"
+                              : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface",
+                          )}
+                        >
+                          <span>{page.label}</span>
+                          <span className="font-label-badge text-label-badge text-outline" aria-hidden="true">
+                            {pad(index + 1)}
+                          </span>
+                        </Link>
+                      </SheetClose>
+                    );
+                  })}
+                </nav>
+
+                <div className="border-t border-outline-variant px-6 py-5">
+                  <p className="mb-3 font-label-badge text-label-badge uppercase tracking-[0.08em] text-on-surface-variant">
+                    Theme settings
+                  </p>
+                  <div className="grid grid-cols-3 gap-1 rounded-lg bg-surface-container p-1" role="group" aria-label="Theme preference">
+                    {THEME_OPTIONS.map((option) => {
+                      const Icon = option.icon;
+                      const selected = theme === option.value;
+                      return (
+                        <Button
+                          key={option.value}
+                          type="button"
+                          variant="ghost"
+                          aria-pressed={selected}
+                          onClick={() => setTheme(option.value)}
+                          className={cn(
+                            "h-12 flex-col gap-1 rounded-md px-2 font-label-md text-label-md",
+                            selected
+                              ? "bg-surface-container-high text-primary"
+                              : "text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface",
+                          )}
+                        >
+                          <Icon aria-hidden="true" />
+                          {option.label}
+                        </Button>
+                      );
+                    })}
+                  </div>
+                  <a
+                    href="mailto:nazashk630@gmail.com?subject=Strategic%20Engineering%20Inquiry"
+                    className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-primary-container px-5 font-label-lg text-label-lg font-bold text-on-primary-container transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    Schedule Strategy Call
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
