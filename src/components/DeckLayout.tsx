@@ -60,7 +60,7 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
     const applyTheme = () => {
       const resolvedTheme = theme === "system" ? (media.matches ? "dark" : "light") : theme;
       document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
-      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset["theme"] = resolvedTheme;
       document.documentElement.style.colorScheme = resolvedTheme;
     };
 
@@ -143,7 +143,7 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
                   <Menu aria-hidden="true" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="w-[min(88vw,22rem)] border-outline-variant bg-surface-container-lowest p-0 text-on-surface">
+              <SheetContent className="w-[min(88vw,22rem)] overflow-y-auto border-outline-variant bg-surface-container-lowest p-0 text-on-surface">
                 <SheetHeader className="border-b border-outline-variant px-6 pb-5 pt-7 text-left">
                   <SheetTitle className="font-headline-sm text-headline-sm text-on-surface">
                     Ashknaz Serwer
