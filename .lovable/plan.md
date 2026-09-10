@@ -1,13 +1,16 @@
-# Smooth Navigation and Drawer
+# Navigation and Theme Settings
 
-## What will change
-- Turn the wide-screen navigation into a continuously gliding horizontal strip that pauses on hover and remains manually scrollable.
-- Keep the active page clearly highlighted within the moving strip.
-- Add a compact menu button on smaller screens that opens a right-side drawer containing all pages and the strategy-call action.
-- Make the drawer close after selecting a page and preserve accessible labels, focus handling, and reduced-motion behavior.
+## Confirmed scope
+Only these existing files will be modified:
+- `src/components/DeckLayout.tsx`
+- `src/styles.css`
 
-## Technical details
-- Update the shared deck header so every portfolio page receives the same navigation behavior.
-- Reuse the existing Sheet and Button interface components for the drawer and trigger.
-- Add a small global marquee animation with duplicated navigation items for a seamless loop, while disabling automatic movement for users who prefer reduced motion.
-- Verify desktop scrolling, mobile drawer interactions, active-page styling, and app diagnostics.
+## Changes
+- Preserve the desktop navigation design while adding manual horizontal scrolling, smooth scroll behavior, and a subtle one-time entrance slide rather than a continuous marquee.
+- Add a compact menu button on smaller screens using the existing Button and Sheet components.
+- List each existing destination once in the drawer, retain active-page styling, include the existing Strategy Call action, and close after selection.
+- Add compact Theme Settings to the drawer/header using the current token system, with the existing dark appearance remaining the default.
+- Respect reduced-motion preferences and preserve focus, keyboard, and dialog behavior supplied by the existing controls.
+
+## Verification
+- Check wide and mobile layouts, manual navigation scrolling, drawer open/close and selection, active-page styling, theme switching, links, keyboard labels, reduced motion, and diagnostics.
