@@ -140,6 +140,34 @@
   --foreground: #dde2f3;
 }
 
+:root[data-theme="light"] {
+  --color-primary: #005f40;
+  --color-primary-fixed-dim: #007a54;
+  --color-primary-container: #00c98c;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #002d1e;
+  --color-secondary: #00658a;
+  --color-secondary-container: #7bd0ff;
+  --color-on-secondary-container: #00374d;
+  --color-surface: #f6faf7;
+  --color-surface-dim: #d7dbd8;
+  --color-surface-bright: #f6faf7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f4f1;
+  --color-surface-container: #eaeeeb;
+  --color-surface-container-high: #e4e9e5;
+  --color-surface-container-highest: #dee3df;
+  --color-surface-variant: #dee3df;
+  --color-on-surface: #181d1a;
+  --color-on-surface-variant: #3f4943;
+  --color-outline: #6f7972;
+  --color-outline-variant: #bec9c1;
+  --color-background: #f6faf7;
+  --color-on-background: #181d1a;
+  --background: #f6faf7;
+  --foreground: #181d1a;
+}
+
 @layer base {
   html, body { margin: 0; padding: 0; }
   body {
@@ -151,6 +179,25 @@
   main > :first-child { margin-top: 0 !important; }
   main > :last-child { margin-bottom: 0 !important; }
   ::-webkit-scrollbar { display: none; }
+}
+
+.deck-nav {
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  animation: deck-nav-settle 450ms ease-out both;
+}
+
+@keyframes deck-nav-settle {
+  from { opacity: 0.85; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck-nav {
+    scroll-behavior: auto;
+    animation: none;
+  }
 }
 
 .material-symbols-outlined {
