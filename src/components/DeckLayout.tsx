@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Laptop, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+import { AiAssistant } from "@/components/AiAssistant";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -221,6 +222,8 @@ export function DeckLayout({ slide, children }: { slide: number; children: React
       </header>
 
       <main className="w-full pt-20 pb-28 bg-surface">{children}</main>
+
+      <AiAssistant />
 
       <aside className="fixed bottom-6 left-0 right-0 z-40 px-gutter-md pointer-events-none flex justify-center">
         <div className="pointer-events-auto max-w-4xl w-full bg-surface-container-low/90 backdrop-blur-xl rounded-full px-gutter-lg py-3 flex items-center justify-between gap-gutter-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
