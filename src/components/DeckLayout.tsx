@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Laptop, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+import { AiAssistant } from "@/components/AiAssistant";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
