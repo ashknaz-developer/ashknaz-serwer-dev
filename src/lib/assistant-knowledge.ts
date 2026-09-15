@@ -302,7 +302,7 @@ export function answerQuestion(input: string): { text: string; actions?: Assista
   }
 
   if (best && bestScore > 0) {
-    return { text: best.text, actions: best.actions };
+    return { text: best.text, ...(best.actions ? { actions: best.actions } : {}) };
   }
 
   return {
