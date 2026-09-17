@@ -10,9 +10,9 @@ export type AssistantAnswer = {
 export const LINKS = {
   whatsapp:
     "https://wa.me/923191585468?text=Hello%20Ashknaz!%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
-  instagram: "https://www.instagram.com/naz_ashk?stkn=cXhuM3B0ejR2Y2c2",
+  instagram: "https://www.instagram.com/ashknaz_ai_lab?stkn=cXhuM3B0ejR2Y2c2",
   linkedin: "https://www.linkedin.com/in/ashk-naz-615479289",
-  facebook: "https://www.facebook.com/share/15ASQaAeqB/",
+  facebook: "https://www.facebook.com/share/1Ru31yCnnY/",
   youtube: "https://youtube.com/@ashknaz_serwer?feature=shared",
   github: "https://github.com/ashknaz-developer",
   smartKhata: "https://github.com/ashknaz-developer/smart-innovation-khata",

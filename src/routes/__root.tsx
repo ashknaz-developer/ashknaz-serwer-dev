@@ -77,14 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ashknaz Serwer • Digital Growth & Engineering" },
+      { title: "ASHKNAZ AI LABS | AI & Digital Engineering" },
       {
         name: "description",
         content:
-          "Executive portfolio of Ashknaz Serwer: full-stack engineering, cloud, AI, design and growth marketing.",
+          "ASHKNAZ AI LABS, founded by Ashknaz Serwer, delivers full-stack engineering, AI systems, cloud products and creative design.",
       },
       { name: "author", content: "Ashknaz Serwer" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "ASHKNAZ AI LABS" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
