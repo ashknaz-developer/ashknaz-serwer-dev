@@ -1,6 +1,7 @@
-import { MessageCircle, Send, X } from "lucide-react";
+import { Send, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import robotAvatar from "@/assets/ashknaz-cyber-robot.png";
 import { Button } from "@/components/ui/button";
 import {
   answerQuestion,
@@ -72,20 +73,32 @@ export function AiAssistant() {
 
   return (
     <>
-      <Button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-label={open ? "Close AI assistant" : "Open Ashknaz AI Assistant"}
-        className="fixed bottom-24 right-5 z-[60] h-14 w-14 rounded-full bg-primary-container p-0 text-on-primary-container shadow-[0_0_28px_-4px_rgba(0,242,170,0.5)] hover:opacity-90 md:bottom-28 md:right-8"
-      >
-        {open ? <X aria-hidden="true" /> : <MessageCircle aria-hidden="true" />}
-      </Button>
+      <div className="fixed bottom-24 right-3 z-[60] flex flex-col items-end gap-1 sm:bottom-28 sm:right-6">
+        {!open && (
+          <span className="rounded-full border border-outline-variant bg-surface-container-lowest/95 px-2.5 py-1 font-label-badge text-[10px] font-bold text-primary shadow-lg backdrop-blur-xl">
+            AI Copilot Online
+          </span>
+        )}
+        <div className="relative">
+          <span className="ai-robot-ring pointer-events-none absolute inset-0 rounded-full border-2 border-primary" />
+          <Button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={open ? "Close AI assistant" : "Open Ashknaz AI Assistant"}
+            className="ai-robot-float relative h-16 w-16 overflow-hidden rounded-full border border-primary/70 bg-surface-container-lowest p-0 text-on-surface shadow-[0_0_30px_-4px_rgba(0,242,170,0.7)] hover:opacity-95 sm:h-20 sm:w-20"
+          >
+            <img src={robotAvatar} alt="Ashknaz AI cyber robot" width={1024} height={1024} className="h-full w-full object-contain" />
+            {open && <span className="absolute inset-0 flex items-center justify-center bg-surface-container-lowest/75"><X aria-hidden="true" /></span>}
+          </Button>
+          <span className="absolute bottom-1 right-1 h-3.5 w-3.5 rounded-full border-2 border-surface-container-lowest bg-primary-container shadow-[0_0_10px_rgba(0,242,170,0.9)]" aria-hidden="true" />
+        </div>
+      </div>
 
       {open && (
         <section
           aria-label="Ashknaz AI Assistant"
-          className="fixed bottom-40 right-3 z-[60] flex max-h-[min(78vh,36rem)] w-[min(94vw,24rem)] flex-col overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-[0_18px_60px_-12px_rgba(0,0,0,0.55)] md:bottom-44 md:right-8"
+          className="fixed bottom-44 right-2 z-[60] flex max-h-[min(36rem,calc(100dvh-12rem))] w-[min(calc(100vw-1rem),24rem)] flex-col overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-[0_18px_60px_-12px_rgba(0,0,0,0.55)] sm:bottom-52 sm:right-6"
         >
           <header className="border-b border-outline-variant px-5 py-4">
             <h2 className="font-headline-sm text-headline-sm font-bold text-on-surface">Ashknaz AI Assistant</h2>
@@ -96,14 +109,15 @@ export function AiAssistant() {
 
           <div className="flex flex-wrap gap-1.5 border-b border-outline-variant px-4 py-3">
             {SUGGESTION_CHIPS.map((chip) => (
-              <button
+              <Button
                 key={chip.label}
                 type="button"
+                variant="ghost"
                 onClick={() => ask(chip.query)}
-                className="rounded-full bg-surface-container px-3 py-1.5 font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="h-auto whitespace-normal rounded-full bg-surface-container px-3 py-1.5 text-left font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-primary"
               >
                 {chip.label}
-              </button>
+              </Button>
             ))}
           </div>
 

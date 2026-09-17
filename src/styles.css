@@ -136,8 +136,8 @@
 }
 
 :root {
-  --background: #0d131f;
-  --foreground: #dde2f3;
+  --background: #0b0f17;
+  --foreground: #f9fafb;
 }
 
 :root[data-theme="light"] {
@@ -149,27 +149,35 @@
   --color-secondary: #00658a;
   --color-secondary-container: #7bd0ff;
   --color-on-secondary-container: #00374d;
-  --color-surface: #f6faf7;
+  --color-surface: #ffffff;
   --color-surface-dim: #d7dbd8;
-  --color-surface-bright: #f6faf7;
+  --color-surface-bright: #ffffff;
   --color-surface-container-lowest: #ffffff;
   --color-surface-container-low: #f0f4f1;
   --color-surface-container: #eaeeeb;
   --color-surface-container-high: #e4e9e5;
   --color-surface-container-highest: #dee3df;
   --color-surface-variant: #dee3df;
-  --color-on-surface: #181d1a;
+  --color-on-surface: #0f172a;
   --color-on-surface-variant: #3f4943;
   --color-outline: #6f7972;
   --color-outline-variant: #bec9c1;
-  --color-background: #f6faf7;
-  --color-on-background: #181d1a;
-  --background: #f6faf7;
-  --foreground: #181d1a;
+  --color-background: #ffffff;
+  --color-on-background: #0f172a;
+  --background: #ffffff;
+  --foreground: #0f172a;
 }
 
 @layer base {
-  html, body { margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  *, *::before, *::after { min-width: 0; }
+  img, video, canvas, svg { max-width: 100%; }
   body {
     overscroll-behavior: none;
     background-color: var(--color-background);
@@ -179,6 +187,41 @@
   main > :first-child { margin-top: 0 !important; }
   main > :last-child { margin-bottom: 0 !important; }
   ::-webkit-scrollbar { display: none; }
+}
+
+html,
+body,
+header,
+main,
+footer,
+[data-radix-scroll-area-viewport] {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.theme-control-icon {
+  transition: transform 300ms ease;
+}
+
+.theme-control-icon:hover {
+  transform: rotate(18deg);
+}
+
+.ai-robot-float {
+  animation: ai-robot-float 3.4s ease-in-out infinite;
+}
+
+.ai-robot-ring {
+  animation: ai-robot-pulse 2.2s ease-out infinite;
+}
+
+@keyframes ai-robot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes ai-robot-pulse {
+  0% { transform: scale(0.86); opacity: 0.8; }
+  75%, 100% { transform: scale(1.18); opacity: 0; }
 }
 
 .deck-nav {
@@ -194,8 +237,23 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  header,
+  main,
+  footer,
+  [data-radix-scroll-area-viewport] {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
   .deck-nav {
     scroll-behavior: auto;
+    animation: none;
+  }
+
+  .ai-robot-float,
+  .ai-robot-ring {
     animation: none;
   }
 }
